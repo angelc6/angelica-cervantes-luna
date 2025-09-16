@@ -4,6 +4,20 @@ body{
     font-family:'Times New Roman', Times, serif /* customize font family */
 }
 
+header{
+    position: sticky;
+    top: 0%;
+    background-color: rgb(228, 154, 190);
+    padding: 10px;
+}
+
+header nav ul{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    list-style-type: none;
+}
+
 h1{
     text-align: center;
     font-size:35px;
@@ -12,8 +26,12 @@ h1{
 }
 
 section{
-    margin: 40px;
-    padding-left: 10px; /* Spacing and padding between sections */
+    padding: 40px;
+    margin: 20px auto;
+    max-width: 900px;
+    background-color: #f8e8e8;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px black;
 }
 
 h2{
@@ -27,24 +45,29 @@ h2{
 }
 
 #Experience{
-    background-color: antiquewhite;
+    background-color: #f8e8e8;
 }
 
-#Experience ul{
-    list-style-type: none; /* transform list items */
+.experience{
+    border-bottom: 1px solid #ccc ;
 }
 
-#Experience li{
-    display:grid;
-}
-
-#Connect{
-    background-color: antiquewhite;
+.experience-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
 }
 
 #Connect a{
     text-decoration: none;
     display: inline-block;
+}
+
+#Connect ul {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 0;
+    list-style-type: none;
 }
 
 #Connect a:hover{
