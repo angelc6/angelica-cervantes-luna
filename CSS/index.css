@@ -1,55 +1,64 @@
+/*===========================================================*/
+/* MOBILE*/
+/*===========================================================*/
 body{
-    background-color: rgb(224, 175, 224); /* Change page body background color*/
-    color: black; /* Change default text color */
-    font-family:'Times New Roman', Times, serif /* customize font family */
+    background-color: rgb(224, 175, 224); 
+    color: black; 
+    font-family:'Times New Roman', Times, serif 
 }
 
+/* Header Section */
 header{
     position: sticky;
     top: 0%;
     background-color: rgb(228, 154, 190);
-    padding: 10px;
+    padding: 1em;
+    box-shadow: 0 0.125rem 0.3125rem black;
 }
 
 header nav ul{
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 1.25rem;
     list-style-type: none;
+    margin: 0;
+    padding: 1rem;
 }
 
 h1{
     text-align: center;
-    font-size:35px;
+    font-size: 1.5em;
     font-weight: 900;
-    text-transform:capitalize; /* transform style of name*/
+    text-transform:capitalize; 
 }
 
 section{
-    padding: 40px;
-    margin: 20px auto;
-    max-width: 900px;
+    padding: 2.5rem;
+    margin: 1.25rem auto;
+    max-width: 90%;
     background-color: #f8e8e8;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px black;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.125rem 0.3125rem black;
 }
 
 h2{
-    font-size: 20px;
-    font-weight: 700; /* change font size, color, weight of headings */
+    font-size: 1.2em;
+    font-weight: 700; 
     color: black;
 }
 
+/* About Section*/
 #About{
-    text-align: center; /* change alignment of content */
+    text-align: center; 
 }
 
+/* Experience Section */
 #Experience{
     background-color: #f8e8e8;
 }
 
 .experience{
-    border-bottom: 1px solid #ccc ;
+    border-bottom: 0.0625rem solid #ccc ;
 }
 
 .experience-header{
@@ -58,13 +67,15 @@ h2{
     align-items: baseline;
 }
 
+/* Connect Section */
 #Connect a{
     text-decoration: none;
     display: inline-block;
 }
 
 #Connect ul {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr;
     justify-content: space-evenly;
     padding: 0;
     list-style-type: none;
@@ -73,4 +84,49 @@ h2{
 #Connect a:hover{
     color: purple;
     text-decoration: underline;
+}
+
+/*===========================================================*/
+/* TABLET*/
+/*===========================================================*/
+@media (min-width: 768px){
+    header{
+        font-size: 1.3em;
+    }
+    h1{
+        font-size: 2.5em;
+        margin-top: 3rem;
+    }
+
+    h2{
+        font-size: 1.7em;
+        font-weight: 700; 
+
+    }
+
+    header nav ul {
+        gap: 1.5rem;
+    }
+
+    #Connect ul {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.25rem;
+        justify-content: center;
+    }
+}
+
+/*===========================================================*/
+/* DESKTOP*/
+/*===========================================================*/
+@media (min-width: 1024px){
+    h1{
+        font-size: 3.4em;
+        margin-top: 3.5rem;
+    }
+
+    #Connect ul {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2.15rem;
+        justify-content: space-evenly;
+    }
 }
