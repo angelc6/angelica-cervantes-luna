@@ -67,6 +67,21 @@ h2{
     align-items: baseline;
 }
 
+/* Skills Section */
+#Skills ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+#Skills li{
+    font-size: medium;
+    padding: 0.5rem 1rem;
+}
+
 /* Connect Section */
 #Connect a{
     text-decoration: none;
