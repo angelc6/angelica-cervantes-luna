@@ -100,6 +100,18 @@ h2{
     color: purple;
     text-decoration: underline;
 }
+/* Form Section */
+#Form{
+    font-size: medium;
+}
+
+#Form button{
+    background-color: pink;
+    font-size: medium;
+    padding: 10px;
+    border: 1.0px solid rgb(0, 0, 0);
+    border-radius: 10%;
+}
 
 /*===========================================================*/
 /* TABLET*/
