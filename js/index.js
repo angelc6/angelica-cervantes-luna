@@ -114,3 +114,52 @@ messageForm.addEventListener("submit", function(event) {
     //clear form after submission
     messageForm.reset();
 });
+
+//--------------- Project Section ------------------
+fetch("https://api.github.com/users/angelc6/repos")
+  .then((response) => {
+    //error fetching data
+    if (!response.ok){
+        //throw error
+        throw new Error ("Failed to fetch data from GitHub. Please try again later.");
+    }
+
+    //return the response
+    return response.json();
+  })
+  .then((repositories) => {
+    //repositories = JSON.parse(this.repositories);
+    console.log("Repositories: ", repositories);
+    //get the Projects section
+    const projectSection = document.getElementById("Projects");
+    //select the list within the Projects section
+    const projectList = projectSection.querySelector("ul");
+    //clear the content
+    projectList.innerHTML = "";
+    
+    //iterate through all the public repositories
+    repositories.forEach((repo) => {
+        //create a new list item
+        const project = document.createElement("li");
+        //create a link for the list items
+        const link = document.createElement("a");
+        //set the link url
+        link.href = repo.html_url;
+        //set the text for the link
+        link.textContent = repo.name;
+        //append the link to the list item
+        project.appendChild(link);
+        //append the list item to the list of projects
+        projectList.appendChild(project);
+    });
+  })
+  .catch((error) => {
+    //log the error
+    console.error("Error fetching repositories: ", error);
+    //get the projects section
+    const projectSection = document.getElementById("Projects");
+    //add an error message on the ui
+    const errorMessage = document.createElement("p");
+    errorMessage.innerHTML = 'Unable to load projects. Please try again later.';
+    projectSection.appendChild(errorMessage);
+  });
