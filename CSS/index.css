@@ -1,10 +1,22 @@
 /*===========================================================*/
-/* MOBILE*/
+/* BASE STYLE (MOBILE)*/
 /*===========================================================*/
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    overflow-x: hidden;
+    max-width: 100%;
+}
+
 body{
     background-color: #fecaca; 
     color: black; 
-    font-family:'Times New Roman', Times, serif 
+    font-family:'Times New Roman', Times, serif; 
+    font-size: 1rem; 
 }
 
 /* Header Section */
@@ -21,14 +33,14 @@ header nav ul{
     justify-content: center;
     gap: 1.25rem;
     list-style-type: none;
-    margin: 0;
     padding: 1rem;
-    
+    flex-wrap: wrap;
 }
 
-header a:link{
+header a {
     color: black;
     text-decoration: none;
+    font-weight: 500;
 }
 
 header a:hover{
@@ -38,11 +50,13 @@ header a:hover{
     border-radius: 20px;
 }
 
+/*headings and sections */
 h1{
     text-align: center;
     font-size: 1.5em;
     font-weight: 900;
     text-transform:capitalize; 
+    margin-top: 1rem;
 }
 
 section{
@@ -104,7 +118,7 @@ h2{
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
-    justify-content:first baseline;
+    justify-content:center;
 }
 
 #Projects li {
@@ -137,6 +151,7 @@ h2{
     justify-content: space-evenly;
     padding: 0;
     list-style-type: none;
+    gap: 1rem;
 }
 
 #Connect a:hover{
@@ -154,12 +169,38 @@ h2{
     padding: 10px;
     border: 1.0px solid rgb(0, 0, 0);
     border-radius: 10px;
+    cursor: pointer;
+}
+
+button, input, textarea {
+    min-height: 40px;
+}
+
+/*===========================================================*/
+/* SMALL PHONES */
+/*===========================================================*/
+@media (max-width: 480px){
+    section {
+    padding: 1.5rem;
+  }
+
+  h1 {
+    font-size: 1.2em;
+  }
+
+  header nav ul {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
 }
 
 /*===========================================================*/
 /* TABLET*/
 /*===========================================================*/
 @media (min-width: 768px){
+    body {
+        font-size: 1.1rem;
+    }
     header{
         font-size: 1.3em;
     }
@@ -170,8 +211,11 @@ h2{
 
     h2{
         font-size: 1.7em;
-        font-weight: 700; 
 
+    }
+
+    section {
+        max-width: 80%;
     }
 
     header nav ul {
@@ -189,14 +233,21 @@ h2{
 /* DESKTOP*/
 /*===========================================================*/
 @media (min-width: 1024px){
+    body {
+        font-size: 1.2rem;
+    }
+
     h1{
         font-size: 3.4em;
         margin-top: 3.5rem;
     }
 
+    section {
+        max-width: 70%;
+    }
+
     #Connect ul {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 2.15rem;
-        justify-content: space-evenly;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
     }
 }
